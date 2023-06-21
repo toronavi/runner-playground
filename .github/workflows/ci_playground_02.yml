@@ -1,3 +1,6 @@
+name: CI Playground 2
+run-name: Playground actions
+
 on:
   workflow_dispatch:
 
