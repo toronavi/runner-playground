@@ -8,15 +8,15 @@ on:
       - master
 
 jobs:
-  test01:
+  job1:
     name: Say Hello
     runs-on: ubuntu-latest
     steps:
       - run: echo Hello world!
 
-  test02:
+  job2:
     name: Say Bye
-    needs: test01
+    needs: job2
     runs-on: ubuntu-latest
     steps:
       - run: echo Bye!
