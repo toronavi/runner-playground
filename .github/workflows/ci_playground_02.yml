@@ -16,7 +16,7 @@ jobs:
 
   job2:
     name: Say Bye
-    needs: job2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - run: echo Bye!
