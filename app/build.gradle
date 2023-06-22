@@ -46,6 +46,13 @@ android {
     }
 }
 
+/* For Ktlint
+/* Ref: https://pinterest.github.io/ktlint/
+*/
+configurations {
+    ktlint
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
