@@ -1,5 +1,15 @@
+name: CI Playground 1
+run-name: Playground actions 1
+
 on:
   workflow_dispatch:
+    inputs:
+      test:
+        required: true
+        type: choice
+        options:
+          - "test1"
+          - "test2"
 
 jobs:
   test:
