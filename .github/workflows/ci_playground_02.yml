@@ -3,6 +3,11 @@ run-name: Playground actions
 
 on:
   workflow_dispatch:
+    inputs:
+      milestone:
+        description: 'milestone'
+        required: true
+        type: string
   push:
     branches:
       - master
