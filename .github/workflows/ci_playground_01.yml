@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "Title is \"$TITLE\"."
         env:
-          TITLE: ${{fromJson(steps.set_json_content.outputs.envJson).title}}
+          NAME: ${{fromJson(steps.set_json_content.outputs.envJson).name}}
   test:
     runs-on: ubuntu-latest
     steps:
