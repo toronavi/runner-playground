@@ -29,7 +29,12 @@ jobs:
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
           # echo "::set-output name=envJson::$content"
-          echo "configJson=$content" >> $GITHUB_OUTPUT
+          echo "envJson=$content" >> $GITHUB_OUTPUT
+      - name: Echo
+        run: |
+          echo "Title is \"$TITLE\"."
+        env:
+          TITLE: ${{fromJson(steps.set_json_content.outputs.envJson).title}}
   test:
     runs-on: ubuntu-latest
     steps:
