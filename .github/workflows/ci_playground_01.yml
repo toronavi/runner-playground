@@ -17,8 +17,6 @@ on:
 jobs:
   parse_env_json:
     runs-on: ubuntu-latest
-    env:
-      NAME: ${{ fromJson(steps.set_json_content.outputs.envJson) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -26,7 +24,8 @@ jobs:
       - name: Set json content to context
         id: set_json_content
         run: |
-          name=$(cat ./${ISSUE_NUMBER}/env.json | jq -r .env)
+          echo {$GITHUB_WORKSPACE}
+          name=$(cat ./env.json | jq -r .env)
           echo "NAME=${name}" >> $GITHUB_ENV
       - name: Echo
         run: |
