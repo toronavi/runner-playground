@@ -17,6 +17,8 @@ on:
 jobs:
   parse_env_json:
     runs-on: ubuntu-latest
+    env:
+      NAME: ${{ fromJson(steps.set_json_content.outputs.envJson) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,18 +26,11 @@ jobs:
       - name: Set json content to context
         id: set_json_content
         run: |
-          content=`cat ./env.json`
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          echo "$content"
-          # echo "::set-output name=envJson::$content"
-          echo "envJson=$content" >> $GITHUB_OUTPUT
+          name=$(cat ./${ISSUE_NUMBER}/env.json | jq -r .env)
+          echo "NAME=${name}" >> $GITHUB_ENV
       - name: Echo
         run: |
           echo "name is \"$NAME\"."
-        env:
-          NAME: ${{ fromJson(steps.set_json_content.outputs.envJson) }}
   test:
     runs-on: ubuntu-latest
     steps:
