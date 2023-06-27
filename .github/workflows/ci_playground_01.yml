@@ -28,6 +28,7 @@ jobs:
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
+          echo "$content"
           # echo "::set-output name=envJson::$content"
           echo "envJson=$content" >> $GITHUB_OUTPUT
       - name: Echo
