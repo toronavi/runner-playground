@@ -24,13 +24,12 @@ jobs:
       - name: Set json content to context
         id: set_json_content
         run: |
-          echo {$GITHUB_WORKSPACE}
           name=$(cat ./env.json | jq -r .name)
-          echo "${name}"
           echo "NAME=${name}" >> $GITHUB_ENV
       - name: Echo
         run: |
           echo "name is \"$NAME\"."
+          
   test:
     runs-on: ubuntu-latest
     steps:
