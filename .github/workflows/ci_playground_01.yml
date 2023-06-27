@@ -26,5 +26,5 @@ jobs:
           echo "::set-output name=envJson::$content"
   test:
     runs-on: ubuntu-latest
-    steps: |
+    steps:
       - run: echo Hello world!
