@@ -32,7 +32,7 @@ jobs:
           echo "envJson=$content" >> $GITHUB_OUTPUT
       - name: Echo
         run: |
-          echo "Title is \"$TITLE\"."
+          echo "name is \"$NAME\"."
         env:
           NAME: ${{fromJson(steps.set_json_content.outputs.envJson).name}}
   test:
