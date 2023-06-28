@@ -1,0 +1,12 @@
+name: CI Playground 4
+run-name: Playground actions 4
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sayHello:
+    name: Say Hello
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello world on master !
