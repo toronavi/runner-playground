@@ -3,3 +3,5 @@ run-name: Playground actions 4
 
 on:
   workflow_dispatch:
+
+jobs:
