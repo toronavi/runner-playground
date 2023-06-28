@@ -9,4 +9,4 @@ jobs:
     name: job in master
     runs-on: ubuntu-latest
     steps:
-      - run: Workflow executed on master
+      - run: echo Workflow executed on master
