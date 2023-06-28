@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  sayHello:
-    name: Say Hello
+  job1:
+    name: job in master
     runs-on: ubuntu-latest
+    steps:
+      - run: Workflow executed on master
