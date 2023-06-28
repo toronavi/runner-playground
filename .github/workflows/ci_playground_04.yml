@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  sayHello:
-    name: Say Hello
+  sayBye:
+    name: Say Bye
     runs-on: ubuntu-latest
     steps:
-      - run: echo Hello world on master !
+      - run: echo Bye !
