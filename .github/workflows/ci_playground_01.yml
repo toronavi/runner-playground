@@ -24,7 +24,7 @@ jobs:
       - name: Set json content to context
         id: set_json_content
         run: |
-          name=$(cat ./env.json | jq -r .name)
+          name=$(cat ./env.json | jq -r .data.name)
           echo "NAME=${name}" >> $GITHUB_ENV
       - name: Echo
         run: |
