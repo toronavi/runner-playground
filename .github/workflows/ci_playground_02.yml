@@ -11,10 +11,10 @@ on:
   push:
     branches:
       - master
-  schedule:
-    # 1-6 (UTC)
-    # 10-15 (JST)
-    - cron: '0 1-6 * * *'
+  # schedule:
+  #   # 1-6 (UTC)
+  #   # 10-15 (JST)
+  #   - cron: '0 1-6 * * *'
 
 env:
   SERVER_ENV: staging
